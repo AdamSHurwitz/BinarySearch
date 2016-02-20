@@ -22,7 +22,6 @@ public class Foo {
         int target = 73;
         int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37,
                 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
-        //int solution = binarySearch(primes, target);
         System.out.println("Answer: " + binarySearch(primes, target));
     }
 
@@ -32,9 +31,6 @@ public class Foo {
         max = arrayLength - 1;
         System.out.println("Begin: min - " + min + " | max - " + max + "\n");
         while (run){
-        //while (!found && indexFound == -1) {
-        //while (indexFound == -1) {
-        //while (timesSearched < arrayLength) {
             indexGuess = (max + min) / 2;
             System.out.println("indexGuess - " + indexGuess + " | min - " + min +
                     " | max - " + max);
@@ -55,8 +51,6 @@ public class Foo {
                 run = false;
             }
             timesSearched += 1;
-            //System.out.println("timesSeached - "+ timesSearched +"\n");
-            //}
         }
         return indexFound;
     }
