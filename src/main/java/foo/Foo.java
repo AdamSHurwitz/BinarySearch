@@ -26,29 +26,27 @@ public class Foo {
     }
 
     public static int binarySearch(int[] primes, int target) {
-        boolean run = true;
-        int arrayLength = primes.length;
+        arrayLength = primes.length;
         max = arrayLength - 1;
         System.out.println("Begin: min - " + min + " | max - " + max + "\n");
-        while (run){
+        while (indexFound == -1){
             indexGuess = (max + min) / 2;
-            System.out.println("indexGuess - " + indexGuess + " | min - " + min +
-                    " | max - " + max);
             if (primes[indexGuess] == target) {
                 indexFound = indexGuess;
                 System.out.println("indexFound - " + indexFound);
-                run = false;
+                //run = false;
             } else if (primes[indexGuess] < target) {
                 min = indexGuess + 1;
-                System.out.println("new min - " + (indexGuess + 1));
-
+                System.out.println("indexGuess - " + indexGuess + " | min - " + min +
+                        " | max - " + max);
             } else if (primes[indexGuess] > target) {
                 max = indexGuess - 1;
-                System.out.println("new max - " + (indexGuess - 1));
+                System.out.println("indexGuess - " + indexGuess + " | min - " + min +
+                        " | max - " + max);
             } else {
-                indexFound = -2;
                 System.out.println("indexFound - not found");
-                run = false;
+                indexFound = -2;
+                //run = false;
             }
             timesSearched += 1;
         }
